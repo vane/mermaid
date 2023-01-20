@@ -23,6 +23,7 @@
     "git graph"
   ],
   "scripts": {
+    "build": "parcel build src/mermaid.ts",
     "clean": "rimraf dist",
     "docs:code": "typedoc src/defaultConfig.ts src/config.ts src/mermaidAPI.ts && prettier --write ./src/docs/config/setup",
     "docs:build": "rimraf ../../docs && pnpm docs:spellcheck && pnpm docs:code && ts-node-esm src/docs.mts",
@@ -57,6 +58,7 @@
     "dagre-d3-es": "7.0.6",
     "dompurify": "2.4.3",
     "elkjs": "^0.8.2",
+    "js-yaml": "^4.1.0",
     "khroma": "^2.0.0",
     "lodash-es": "^4.17.21",
     "moment-mini": "^2.24.0",
@@ -66,8 +68,14 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@parcel/packager-ts": "^2.8.3",
+    "@parcel/transformer-typescript-tsc": "^2.8.3",
+    "@parcel/transformer-typescript-types": "^2.8.3",
+    "@szczepano/parcel-resolver-jison": "^0.0.4",
+    "@szczepano/parcel-transformer-jison": "^0.0.4",
     "@types/d3": "^7.4.0",
     "@types/dompurify": "^2.4.0",
+    "@types/js-yaml": "^4.0.5",
     "@types/jsdom": "^20.0.1",
     "@types/lodash-es": "^4.17.6",
     "@types/micromatch": "^4.0.2",
@@ -87,6 +95,7 @@
     "jsdom": "^20.0.2",
     "micromatch": "^4.0.5",
     "moment": "^2.29.4",
+    "parcel": "^2.8.3",
     "path-browserify": "^1.0.1",
     "prettier": "^2.7.1",
     "remark": "^14.0.2",
